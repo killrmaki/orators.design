@@ -15,6 +15,25 @@ div.emscripten { text-align: center; }
 div.emscripten_border { border: 1px solid black; }
 /* the canvas *must not* have any border or padding, or mouse coords will be wrong */
 canvas.emscripten { border: 0px none; background-color: black; }
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  background: #0b0f10;
+}
+#emscripten_logo, #controls, #spinner, #status, #progress, #output {
+  display: none !important;
+}
+#canvas.emscripten {
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: min(100vw, 155.5556vh);
+  height: auto;
+  max-height: 100vh;
+}
 
 #emscripten_logo {
   display: inline-block;
