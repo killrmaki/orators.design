@@ -1005,6 +1005,16 @@ int main(void)
                         break;
                     }
                 }
+            } else if (node->next == END) {
+                if (GuiButton((Rectangle){60, 525, 320, 40}, "Restart Story")) {
+                    currentNode = tier_1_1;
+                    screen = STORY_SCREEN;
+                }
+
+                if (GuiButton((Rectangle){420, 525, 320, 40}, "Title Screen")) {
+                    currentNode = tier_1_1;
+                    screen = TITLE_SCREEN;
+                }
             } else if (node->next >= 0) {
                 if (GuiButton((Rectangle){570, 525, 180, 40}, "Continue"))
                     currentNode = node->next;
